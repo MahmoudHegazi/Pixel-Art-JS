@@ -98,7 +98,7 @@ td {
   <td></td>
 </tr>
 </table>
-
+<input id="selected_color" type="color" value="">
 <script>
 const x = document.querySelectorAll('tr');
 for (var i=0; i<x.length; i++) {
@@ -106,7 +106,8 @@ x[i].addEventListener('click', myFunction);
 }
 function myFunction() {
   var z = event.target;
-  z.style.background = "blue";
+  var colorUsed = document.getElementById('selected_color');
+  z.style.background = colorUsed.value;
 }
 </script>
 
