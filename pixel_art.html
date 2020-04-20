@@ -615,7 +615,7 @@ let memory = '';
 document.addEventListener('auxclick', switchto);
 
 // this function used to switch bettwen modes when user clicks on right click
-// I know it kinda repeated so I used switch to make it less repated 
+// I know it kinda repeated but in order to add
 function switchto() {
 
 // replaced if with switch to add better performance 
@@ -628,7 +628,8 @@ switch (memory) {
     for (var i=0; i<x.length; i++) {
       x[i].addEventListener('click', myFunction);
     }
-    memory = 'click';    
+    memory = 'click';
+    mode.value = 'click';
     break;
   case "click":
     for (var i=0; i<x.length; i++) {
@@ -638,7 +639,8 @@ switch (memory) {
     for (var i=0; i<x.length; i++) {
       x[i].addEventListener('mousemove', myFunction);
     }
-    memory = 'mousemove';    
+    memory = 'mousemove';
+    mode.value = 'mousemove';
     break;
 
 }
