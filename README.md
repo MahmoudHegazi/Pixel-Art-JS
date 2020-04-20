@@ -1,6 +1,7 @@
 # Pixel-Art-JS
 
-build a single art applaction with 6 lines only oh yea I love JavaScript  (version 1.1 6 js lines only)
+build a JavaScript Pixel art Applaction 
+I love JavaScript  (version 1.1 6 js lines only)
 
 ## version 1.1
 
