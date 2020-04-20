@@ -612,6 +612,38 @@ let mode = document.getElementById('get_modes');
 // memory let me save last mode selected In order to remove it
 let memory = '';
 
+document.addEventListener('auxclick', switchto);
+
+// this function used to switch bettwen modes when user clicks on right click
+// I know it kinda repeated so I used switch to make it less repated 
+function switchto() {
+
+// replaced if with switch to add better performance 
+switch (memory) {
+  case "mousemove":
+    for (var i=0; i<x.length; i++) {
+      x[i].removeEventListener(memory, myFunction);
+    }
+    memory = '';
+    for (var i=0; i<x.length; i++) {
+      x[i].addEventListener('click', myFunction);
+    }
+    memory = 'click';    
+    break;
+  case "click":
+    for (var i=0; i<x.length; i++) {
+      x[i].removeEventListener(memory, myFunction);
+    }
+    memory = '';
+    for (var i=0; i<x.length; i++) {
+      x[i].addEventListener('mousemove', myFunction);
+    }
+    memory = 'mousemove';    
+    break;
+
+}
+}
+
 // main function used to loop over all td elements to add event on it
 // according to the selected mode or event but first it clean the memory
 // then store the new value after loop ends in order to keep memory updated
@@ -646,4 +678,3 @@ function myFunction() {
 
 </body>
 </html>
-
