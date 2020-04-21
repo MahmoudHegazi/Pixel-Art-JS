@@ -35,3 +35,4 @@ more than 2 saves But to keep it easy use it one time only per session.
 ## old Version 2.1:
   https://filtrablevulture.htmlpasta.com/
 
+## or check it on my own server at: http://18.196.30.95/paint
