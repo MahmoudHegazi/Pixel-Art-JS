@@ -1252,7 +1252,8 @@ td {
 
 <br /><br />
 
-
+<button onclick="excuted()">Load</button>
+<button onclick="remember()">save</button>
 <input id="selected_color" type="color" value="">
 
 <select id="get_modes" onchange="refresh()">
@@ -1265,6 +1266,7 @@ td {
 <button id="draw_button" onclick="draw()">Draw Rectangle</button>
 
 <script>
+let saver = [];
 const x = document.querySelectorAll('td');
 const drawButton = document.getElementById("draw_button");
 let mode = document.getElementById('get_modes');
@@ -1334,7 +1336,38 @@ function myFunction() {
   var z = event.target;
   var colorUsed = document.getElementById('selected_color');
   z.style.background = colorUsed.value;
+  // this for saver or Remember function
+  saver.push(z);
 }
+
+// My Biggest Update Remeber What You Saved
+// every element us used appended to the array name saver
+// when you click on save I take copy from the last updated array
+// then when I call excuted it change the copied element style and remove aditional elements
+let updated = [];
+var colorUsed = document.getElementById('selected_color');
+
+function remember() {
+  updated = [];
+  for (var i =0; i< saver.length; i++) {
+    updated.push(saver[i]);
+  }
+  alert("Your Code Has Been Saved while this session open");
+}
+
+
+function excuted() {
+    var clearOld = document.querySelectorAll('td');
+    for (var index = 0; index < clearOld.length; index++) {
+      clearOld[index].style.background = "white";
+    }
+    
+    for (var i = 0; i < updated.length; i++) {
+      updated[i].style.background = colorUsed.value;
+    
+  }  
+  
+  }
 
 function draw() {
    
