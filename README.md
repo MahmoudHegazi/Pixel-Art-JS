@@ -7,6 +7,13 @@ I love JavaScript  (version 1.1 6 js lines only)
 
 <img src="app_udacity.PNG">
 
+## last update:
+1.  I added new Draw Function to draw static shapes.
+2.  I added a new awesome function Save (Save your paint while session open).
+3.  I added a second awesome function load (load your saved paint ) OMG.
+4.  Note There is no database so this gonna save your code and load it while you didn't reload browser.
+5.  Please Note While no database it's better to use save and load only once (Sometimes it work normal for 
+more than 2 saves But to keep it easy use it one time only per session.
 
 ## How To Use it:
 
