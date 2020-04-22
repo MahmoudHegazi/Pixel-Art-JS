@@ -23,6 +23,23 @@ more than 2 saves But to keep it easy use it one time only per session.
 4.  It will start with default color "black" select the color you need and start drawing.
 5.  screet tip try to use click mode then stand on the point you need then switch if you need pause move right click.
 
+
+## what is the main idea:
+
+But I used this with querySelectorAll td and in for loop to add the event to all td elements 
+then get the target or which elements user clicked the change background style I also push this
+target to list (saver) this is save each element the user clicked when user click on save
+I make a copy from this array or saver list in another list , if used click on load I change the 
+style for the selected elements and make other td background white (it will act like save and load)
+
+``` javascript
+document.addEventListener('click', () => {
+  var x =  event.target;
+  x.style.background = "blue";
+});
+
+
+```
 ## version 3.1
 <img src="myApp.PNG">
 
@@ -36,3 +53,4 @@ more than 2 saves But to keep it easy use it one time only per session.
   https://filtrablevulture.htmlpasta.com/
 
 ## or check it on my own server at: http://18.196.30.95/paint
+
