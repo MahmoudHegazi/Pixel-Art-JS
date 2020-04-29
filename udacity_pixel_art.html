@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pixel Art Maker!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="styles.css">
+    
+
+<style>
+
+</style>
+</head>
+
+<body>
+    <h1>Lab: Pixel Art Maker</h1>
+
+    <h2>Choose Grid Size</h2>
+    <form id="sizePicker">
+        Grid Height:
+        <input type="number" id="inputHeight" name="height" min="1" value="1"> Grid Width:
+        <input type="number" id="inputWidth" name="width" min="1" value="1">
+        <input type="button" onclick="save()" value="save">
+        <input type="button" onclick="load()" value="save">
+        <select id="mode">
+        <option value="click">Click Mode</option>
+        <option value="mousemove">Mouse Move</option>
+        </select>
+        <input type="button" id="mm"  value="submit">
+    </form>
+
+    <h2>Pick A Color</h2>
+    <input type="color" id="colorPicker">
+
+    <h2>Design Canvas</h2>
+    <table id="pixelCanvas"></table>
+
+    <script src="designs.js"></script>
+    
+    
+    
+        <script>
+    // Select color input
+    
+let saver = [];
+let loader = [];
+let myColor = document.getElementById('colorPicker');
+// Select size input
+let myHeight = document.getElementById('inputHeight');
+let myWidth = document.getElementById('inputWidth');
+// When size is submitted by the user, call makeGrid()
+
+let myForm = document.getElementById('sizePicker');
+let mytable = document.getElementById('pixelCanvas');
+let getMode = document.getElementById('mode');
+var  m = document.getElementById('mm');
+let pWidth = document.getElementById('pixelwidth');
+
+
+m.addEventListener('click', makeGrid);
+
+function makeGrid() {
+  // Your code goes here!
+  
+  for (var h = 0; h < myHeight.value; h++) {
+      var myTr = document.createElement('tr');
+      for (var w = 0; w < myWidth.value; w++) {
+         
+         var myTd = document.createElement('td');
+         myTr.appendChild(myTd);
+         mytable.appendChild(myTr);
+      }
+  }
+  mytable.style.border = "2px solid black";
+  const allTds = document.querySelectorAll('td');
+  function draw (event) {
+    event.target.style.background = myColor.value;
+    saver.push(event.target);
+
+  }
+  for (var t = 0; t < allTds.length; t++) {
+     allTds[t].addEventListener(getMode.value, draw);
+  }
+   
+// create save function
+
+  
+}
+
+ function save() {   
+   alert(saver);
+    for (var index = 0; index < saver.length; index++) {
+    loader.push(saver[index]);
+   
+
+    
+    
+  }
+  
+  
+}
+
+function load() {
+  var removeOthers = document.querySelectorAll('td');
+  for ( var one = 0; one < removeOthers.length; one++) {
+    removeOthers[one].style.background = 'transparent';
+  }
+    for (var z = 0; z < loader.length; z++) {
+    loader[z].style.background = myColor.value;
+  }
+  
+  saver = [];
+  for (var n = 0; n < loader.length; n++ ) {
+     saver.push(loader[n]);
+  } 
+
+  alert(loader);
+}
+
+
+
+
+
+ var x = document.querySelector("#pixelCanvas tr");
+alert(x);
+    </script>
+</body>
+
+</html>
